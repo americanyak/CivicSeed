@@ -34,7 +34,9 @@ var self = module.exports = {
 				userRole = 'non-user';
 			}
 
-			$CONTAINER.empty().append(JT['partials-navigation']({ fullPath: fullPath }));
+			$('.navbar').remove();
+			$OUTER_CONTAINER.prepend(JT['partials-navigation']({ fullPath: fullPath }));
+			$CONTAINER.empty();
 
 			// TODO: apply a more robust, secure system for routing
 			// this system is temporary, but sufficient for current needs

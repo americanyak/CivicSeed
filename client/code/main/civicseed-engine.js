@@ -9,6 +9,7 @@ var self = module.exports = {
 			window.$HTML = $('html');
 			window.$BODY = $(document.body);
 			window.$CONTAINER = $('#container');
+			window.$OUTER_CONTAINER = $('#outerContainer');
 
 			// game specific:
 			window.$game = require('/game');

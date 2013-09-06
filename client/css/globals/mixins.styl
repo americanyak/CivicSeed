@@ -1,10 +1,10 @@
 // vendors = webkit moz official
-// $vendor(property, arguments)
-// 	-webkit-{property} arguments
-// 	// -moz-{property} arguments
-// 	// -ms-{property} arguments
-// 	// -o-{property} arguments
-// 	{property} arguments
+$vendor(property, arguments)
+	-webkit-{property} arguments
+	// -moz-{property} arguments
+	// -ms-{property} arguments
+	// -o-{property} arguments
+	{property} arguments
 
 // $filter()
 // 	$vendor('filter', arguments)
@@ -18,8 +18,8 @@
 // $boxShadow()
 // 	$vendor('box-shadow', arguments)
 
-// $boxSizing()
-// 	$vendor('box-sizing', arguments)
+$boxSizing()
+	$vendor('box-sizing', arguments)
 
 // // SEE: http://css-tricks.com/perfect-full-page-background-image/
 // $backgroundSize()

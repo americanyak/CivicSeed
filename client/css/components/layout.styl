@@ -1,5 +1,37 @@
-body, button, p, a
-	font-family $bodyFont
+html
+	padding 20px
+	width 100%
+	height 100%
+	background-color $csBorderColor
+	overflow hidden
+	font-size 10px
+	$boxSizing(border-box)
+	-webkit-text-size-adjust 100%
 body
-	padding-top 80px
-	font-family $bodyFont
+	// position absolute
+	// left 0
+	// top 0
+	margin 0
+	width 100%
+	height 100%
+	color black
+	background-color $csBackgroundColor
+	font $bodyFont/$baseLineHeight $baseFontFamily
+	overflow hidden
+	overflow-y hidden
+	overflow-x auto
+
+#outerContainer
+	width auto
+	// .container
+	// 	max-width 100%
+// body, button, p, a
+// 	font-family $bodyFont
+
+
+.navbar
+	background-color $csBorderColor
+	// .navbar-inner
+	// 	background-color red
+	// 	.container-fluid.navPadding
+	// 		background-color black
