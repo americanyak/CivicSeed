@@ -1,10 +1,3 @@
-@font-face
-	font-family 'InconsolataMedium'
-	src $cloudUrl('fonts/Inconsolata-webfont.woff') format('woff'),
-		$cloudUrl('fonts/Inconsolata-webfont.ttf') format('truetype')
-	font-weight normal
-	font-style normal
-
 .gameboard
 	position relative
 	margin 0 auto
@@ -221,7 +214,7 @@
 				width 155px
 				border-radius 5px 5px 0 0
 			li a
-				font-family $bodyFont
+				font-family $fontFamily
 				font-size 1.2em
 				border 0
 				color white
@@ -803,7 +796,7 @@ p.finalQuestion
 	text-align center
 
 .message
-	font-family $bodyFont
+	font-family $fontFamily
 
 div.currentButton
 	background #666
@@ -965,7 +958,7 @@ p.privacyMessage
 		font-family $buttonFont
 		.date 
 			color $csLightBlue
-			font-family $mono
+			font-family $monoFontFamily
 			font-size .8em
 			margin-right 8px
 		.playerName
@@ -982,7 +975,7 @@ p.privacyMessage
 	top 10px
 	left 10px
 	font-size 16px
-	font-family $mono
+	font-family $monoFontFamily
 	width auto
 	height 20px
 	background rgba(20,20,20,0.7)
@@ -997,7 +990,7 @@ p.privacyMessage
 	position absolute
 	width 22px
 	cursor pointer
-	font-family $mono
+	font-family $monoFontFamily
 	text-align center
 	padding 4px 5px
 	border-radius 22px
