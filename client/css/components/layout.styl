@@ -3,7 +3,7 @@ html
 	width 100%
 	height 100%
 	background-color $csBorderColor
-	overflow hidden
+	// overflow hidden
 	font-size 10px
 	$boxSizing(border-box)
 	-webkit-text-size-adjust 100%
@@ -17,9 +17,10 @@ body
 	color black
 	background-color $csBackgroundColor
 	font $fontSize/$lineHeight $fontFamily
+	// overflow hidden
+	// overflow-y hidden
+	// overflow-x auto
 	overflow hidden
-	overflow-y hidden
-	overflow-x auto
 
 #outerContainer
 	width auto
@@ -29,11 +30,31 @@ body
 // 	font-family $fontFamily
 
 
-.navigation
+.navBar
 	background-color $csBorderColor
-	// .navbar-inner
-	// 	background-color red
-	// 	.container-fluid.navPadding
-	// 		background-color black
-	a
-		color red
+	$clearfix()
+	.logo
+		float left
+		margin 0 25px 0 0
+		a
+			display block
+			width 235px
+			height 35px
+			background $cloudUrl('img/logo.png') no-repeat 0 0 transparent
+	nav
+		margin 0
+		float left
+		ul
+			float left
+		li
+			float left
+			margin -20px 0 0
+			padding 0 20px 20px 20px
+			height 55px
+			line-height 75px
+			border-left 1px solid $csBackgroundColor
+		a
+			color black
+	// temporarily hiding
+	.btn-group
+		display none

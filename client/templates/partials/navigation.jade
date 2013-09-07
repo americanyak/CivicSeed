@@ -1,7 +1,25 @@
-nav.navigation.no-print
-	a.brand(href='/') Civic Seed
+.navBar.no-print
+
+	- if(locals && locals.fullPath)
+		style
+			.navBar a[href='#{locals.fullPath}'] {
+				text-decoration: none;
+			}
+
+	h1.logo: a.ir(href='/') Civic Seed
+
+	nav
+		ul
+			li: a(href='/') Home
+			li: a(href='/about') About
+			li: a(href='/profiles') Profiles
+			li: a(href='/contact') Contact Us
+
+			- if(sessionStorage.userRole === 'superadmin' || sessionStorage.userRole === 'admin')
+				li: a(href='/admin') Admin Console
+
 	- if(sessionStorage.userFirstName)
-		.btn-group.pull-right.tempFixMargin
+		.btn-group.pull-right
 			a.btn.btn-primary.dropdown-toggle(data-toggle='dropdown', href='#')
 				i.icon-user 
 					span &nbsp;#{sessionStorage.userFirstName}&nbsp;
@@ -10,19 +28,3 @@ nav.navigation.no-print
 				//- li: a(href='/profiles') Profiles
 				//- li.divider
 				li.signOut: a(href='/signout') Sign Out
-
-
-	#mainNavigation.nav-collapse
-		- if(locals && locals.fullPath)
-			style
-				#mainNavigation a[href='#{locals.fullPath}'] {
-					text-decoration: none;
-				}
-		ul.nav
-			li: a(href='/') Home
-			li: a(href='/about') About
-			li: a(href='/profiles') Profiles
-			li: a(href='/contact') Contact Us
-
-			- if(sessionStorage.userRole === 'superadmin' || sessionStorage.userRole === 'admin')
-				li: a(href='/admin') Admin Console

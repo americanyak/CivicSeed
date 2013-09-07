@@ -91,14 +91,14 @@ $borderRadius()
 // 	$vendor('user-select', none)
 // 	cursor default
 
-// $clearfix()
-// 	&:before
-// 	&:after
-// 		content ' '
-// 		display table
-// 	    line-height 0
-// 	&:after
-// 		clear both
+$clearfix()
+	&:before
+	&:after
+		content ' '
+		display table
+	    line-height 0
+	&:after
+		clear both
 
 $cloudUrl($url)
 	url($cloudPath + $url + '?cache=' + $cache)

@@ -34,7 +34,7 @@ var self = module.exports = {
 				userRole = 'non-user';
 			}
 
-			$('.navigation').remove();
+			$('.navBar').remove();
 			$OUTER_CONTAINER.prepend(JT['partials-navigation']({ fullPath: fullPath }));
 			$CONTAINER.empty();
 
