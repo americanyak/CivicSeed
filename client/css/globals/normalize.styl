@@ -3,8 +3,8 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: >>>>> BASICS
 
 
-::-moz-selection{background:#f8d36f;color:#000;text-shadow:none;}
-::selection{background:#f8d36f;color:#000;text-shadow:none;}
+::-moz-selection{background:$white;color:$black;text-shadow:none;}
+::selection{background:$white;color:$black;text-shadow:none;}
 a{color:#4559ac;text-decoration:none;}
 a:hover{text-decoration:underline;}
 a:focus{outline:thin dotted;}
@@ -40,7 +40,6 @@ figure{margin:0;}
 
 
 p{margin:0 0 1em;}
-.smallText{font:15px/21px Lato,Arial,sans-serif;}
 h1{margin:0 0 24px;font:400 42px/1 Lato,Arial,sans-serif;color:#4559ac;}
 h2{margin:0;font:32px/42px Lato,Arial,sans-serif;}
 h3{margin:42px 0 10px;font:700 24px/32px Lato,Arial,sans-serif;text-transform:uppercase;letter-spacing:1.5px;}
@@ -63,8 +62,8 @@ h6{margin:24px 0 3px;font:900 italic 15px/1 Lato,Arial,sans-serif;}
 .image.left{margin:5px 24px 22px -170px;}
 .image.right{margin:5px -170px 22px 24px;}
 img{border:0;-ms-interpolation-mode:bicubic;vertical-align:middle;line-height:0;-webkit-border-radius:3px;border-radius:3px;}
-ul{margin:1em 18px;padding:0;font:18px/24px Lato,Arial,sans-serif;}
-ol{margin:1em 18px;padding:0;list-style-type:decimal;font:18px/24px Lato,Arial,sans-serif;}
+ul{margin:1em 18px;padding:0;}
+ol{margin:1em 18px;padding:0;list-style-type:decimal;}
 ul ul{margin:6px 18px;}
 ul ol{margin:6px 18px;}
 ol ol{margin:6px 18px;}
@@ -86,9 +85,6 @@ table
 	border-spacing: 0;
 	border: 0 none;
 	cursor: default;
-.content table
-	margin: 0 -85px 18px;
-	width: 830px !important;
 caption
 	margin: 0 0 8px;
 	padding: 0;
@@ -110,8 +106,6 @@ th
 	-webkit-transition: background-color ease .5s;
 	-moz-transition: background-color ease .5s;
 	transition: background-color ease .5s;
-.content th:hover
-	background-color: #f9ca49;
 td
 	padding: 6px 12px;
 	vertical-align: top;
@@ -120,7 +114,6 @@ td
 	-webkit-transition: background-color ease .5s;
 	-moz-transition: background-color ease .5s;
 	transition: background-color ease .5s;
-.content tr:hover td { background-color: #f6f6f6; }
 .console h1 {margin:15px 0 0;font:28px/36px Lato,Arial,sans-serif;color:#3a3a3a;}
 .console hgroup h1 {font-weight:700;}
 .console hgroup h2 {font:28px/36px Lato,Arial,sans-serif;}

@@ -123,9 +123,11 @@ var $game = module.exports = {
 	},
 
 	kickOffGame: function() {
-		$CONTAINER.append(JT['game-gameboard']());
-		$CONTAINER.append(JT['game-resourceStage']());
-		$CONTAINER.append(JT['game-hud']());
+		var $gameContainer = $('<div id="gameContainer"/>');
+		$gameContainer.append(JT['game-gameboard']());
+		$gameContainer.append(JT['game-resourceStage']());
+		$gameContainer.append(JT['game-hud']());
+		$CONTAINER.append($gameContainer);
 		$events.registerVariables();
 		$input.registerVariables();
 		_kickOffGame();

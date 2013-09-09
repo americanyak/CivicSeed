@@ -1,60 +1,81 @@
 html
-	padding 20px
+	padding 0 20px 20px
 	width 100%
 	height 100%
 	background-color $csBorderColor
-	// overflow hidden
 	font-size 10px
 	$boxSizing(border-box)
 	-webkit-text-size-adjust 100%
 body
-	// position absolute
-	// left 0
-	// top 0
 	margin 0
 	width 100%
 	height 100%
 	color black
 	background-color $csBackgroundColor
 	font $fontSize/$lineHeight $fontFamily
+
+#outerContainer
+	position relative
+	padding 43px 0 0
+	width 100%
+	height 100%
+	overflow hidden
+	$boxSizing(border-box)
+	// width 960px
+	// height 480px
+
+#container
+	// position absolute
+	// top 0
+	// left 0
+
 	// overflow hidden
 	// overflow-y hidden
 	// overflow-x auto
-	overflow hidden
-
-#outerContainer
-	width auto
-	// .container
-	// 	max-width 100%
-// body, button, p, a
-// 	font-family $fontFamily
-
+	padding 20px
+	width 100%
+	height 100%
+	overflow auto
+	$boxSizing(border-box)
+	z-index $zBack
 
 .navBar
+	position absolute
+	top 0
+	left 0
+	width 100%
 	background-color $csBorderColor
+	z-index $zFront
 	$clearfix()
 	.logo
 		float left
-		margin 0 25px 0 0
+		margin 0
 		a
 			display block
-			width 235px
-			height 35px
+			margin 5px 8px 8px 0
+			width 202px
+			height 30px
 			background $cloudUrl('img/logo.png') no-repeat 0 0 transparent
 	nav
 		margin 0
 		float left
+		font-size 1.2rem
+		font-weight 400
+		text-transform uppercase
 		ul
 			float left
 		li
 			float left
-			margin -20px 0 0
-			padding 0 20px 20px 20px
-			height 55px
-			line-height 75px
+			margin 0
 			border-left 1px solid $csBackgroundColor
 		a
+			display block
 			color black
-	// temporarily hiding
-	.btn-group
-		display none
+			padding 5px 25px
+			height 33px
+			line-height 33px
+			text-decoration none
+			$transition(all 0.3s ease)
+		a:hover
+			background-color black
+			color white

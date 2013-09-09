@@ -20,6 +20,9 @@ var self = module.exports = {
 
 			var fullPath = req.fullPath;
 			var userRole = sessionStorage.getItem('userRole');
+			var classSegments;
+			var classSegmentsLength;
+			var i;
 
 			if(Davis.previousPath && Davis.previousPath === '/game') {
 				// do something special here
@@ -28,7 +31,7 @@ var self = module.exports = {
 					$game.exitGame();
 				}
 			}
-			Davis.previousPath = req.fullPath;
+			Davis.previousPath = fullPath;
 
 			if(typeof userRole !== 'string') {
 				userRole = 'non-user';
@@ -37,6 +40,17 @@ var self = module.exports = {
 			$('.navBar').remove();
 			$OUTER_CONTAINER.prepend(JT['partials-navigation']({ fullPath: fullPath }));
 			$CONTAINER.empty();
+			$BODY.removeAttr('class');
+
+			classSegments = fullPath.split('/');
+			classSegmentsLength = classSegments.length;
+			for(i = 1; i < classSegmentsLength; i++) {
+				if(classSegments[i] === '') {
+					$BODY.addClass('page-home');
+				} else {
+					$BODY.addClass('page-' + classSegments[i]);
+				}
+			}
 
 			// TODO: apply a more robust, secure system for routing
 			// this system is temporary, but sufficient for current needs

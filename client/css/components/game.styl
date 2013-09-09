@@ -1,21 +1,28 @@
+body.page-game
+	
+	background $cloudUrl('img/map_outline1.png') no-repeat center $csBackgroundColor
+	// #outerContainer
+	// #container
+
+#gameContainer
+	position absolute
+	left 50%
+	top 50%
+	margin -240px 0 0 -480px
+	width 960px
+	height 480px
+	background-color red
+
 .gameboard
 	position relative
-	margin 0 auto
 	width 960px
 	height 480px
 	padding 0
-	border-radius 5px
-	border 4px solid #222
+	// border 4px solid $csGreen
 	z-index 0
 	background #eee
 	color #333
-	-webkit-touch-callout none
-	-webkit-user-select none
-	-khtml-user-select none
-	-moz-user-select none
-	-ms-user-select none
-	user-select none
-	// cursor: url(http://placehold.it/32x32.png), auto;
+	$noUserSelect()
 	ul, ol
 		font-size 16px
 	.cutScene
@@ -26,6 +33,15 @@
 		left 0
 		width 960px
 		height 480px
+
+.hud
+	margin 20px 0 0
+	$noUserSelect()
+	div
+		font-size 22px
+		float left
+
+
 
 .loading
 	margin 150px 0 0 0
@@ -545,15 +561,6 @@
 	right 0px
 	border-radius 3px
 
-.hud
-	margin-top 20px
-	-webkit-touch-callout none
-	-webkit-user-select none
-	-khtml-user-select none
-	-moz-user-select none
-	-ms-user-select none
-	user-select none
-
 .debug p
 	float left
 	margin-left 20px
@@ -585,10 +592,6 @@
 .seedventory
 	padding-left 20px
 	width 140px
-
-.hud div
-	font-size 22px
-	float left
 
 .pauseMenu
 	position absolute

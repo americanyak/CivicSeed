@@ -74,9 +74,9 @@ $borderRadius()
 // 	// -ms-transform-style preserve-3d
 // 	transform-style preserve-3d
 
-// $transition()
-// 	// $vendor('transition', arguments)
-// 	-webkit-transition arguments
+$transition()
+	// $vendor('transition', arguments)
+	-webkit-transition arguments
 
 // $translate3d()
 // 	// $vendor('transform', translate3d(0, 0, 0))
@@ -85,11 +85,12 @@ $borderRadius()
 // $accelerate()
 // 	$translate3d()
 
-// // $userSelect()
-// // 	$vendor('user-select', arguments)
-// $noUserSelect()
-// 	$vendor('user-select', none)
-// 	cursor default
+// $userSelect()
+// 	$vendor('user-select', arguments)
+$noUserSelect()
+	$vendor('touch-callout', none)
+	$vendor('user-select', none)
+	cursor default
 
 $clearfix()
 	&:before
