@@ -11,6 +11,7 @@ body.page-game
 	margin -240px 0 0 -480px
 	width 960px
 	height 480px
+	cursor none
 
 .gameboard
 	position relative
@@ -39,13 +40,34 @@ body.page-game
 			height 480px
 
 .hud
-	margin 20px 0 0
+	margin 18px 0 0
+	font-size 22px
 	$noUserSelect()
 	div
-		font-size 22px
 		float left
 
+.chatBox
+	input
+		width 325px
+		font 16px/1 $monoFontFamily
+		height 36px
+		border 0 none
+		background-color $csIconBlackLight
+		color white
+		&::-webkit-input-placeholder
+			color white
+	button
+		margin 0 0 0 10px
+		// width 40px
+		font 16px/36px $monoFontFamily
+		height 36px
+		border 0 none
+		background-color $csIconBlackLight
+		color white
 
+// @css {
+// 	.chatBox input
+// }
 
 .loading
 	margin 150px 0 0 0
@@ -577,20 +599,37 @@ body.page-game
 	margin-left 20px
 
 .playerHud
-	div
-		cursor pointer
+.globalHud
+	.hudIcon
+		position relative
 		width 48px
 		height 36px
 		line-height 36px
-		margin-right 10px
-		margin-left 10px
-		background #ccc
-		// background rgba(0,0,0,.2)
-		border-radius 5px
-		position relative
+		margin 0 10px 0 0
+		background-color $csIconBlackLight
+		color white
 		text-align center
-	div:hover
-		box-shadow 0 0 2px 2px rgba(0,0,0,.5)
+		cursor pointer
+		$transition(background-color 0.3s ease)
+	.hudIcon:hover
+		background-color $csIconBlack
+		.badge
+			background-color white !important
+	.badge
+		position absolute
+		top -12px
+		color $csIconBlack
+		padding 3px
+		font-size 1.2rem
+		line-height 12px
+		background-color $csIconWhiteLight !important
+		z-index $zFront
+.globalHud
+	margin-left 20px
+	.hudIcon
+		float right
+
+
 
 .seedventory div
 	font-size 24px
@@ -631,9 +670,6 @@ body.page-game
 .hideButton
 	display none
 
-#chatButton
-	margin-left 10px
-
 .riddleText
 	position absolute
 	top 40px
@@ -652,10 +688,6 @@ body.page-game
 	top 170px
 	right 0px
 
-.chatBox input
-	width 75%
-	font-size 16px, monospace
-
 textarea
 	font-family $buttonFont
 	width 800px
@@ -669,32 +701,8 @@ p.finalQuestion
 	font-size 1.2em
 	color #222
 
-.globalHud
-	margin-left 20px
-	div
-		width 48px
-		height 36px
-		margin-left 20px
-		cursor pointer
-		position relative
-		float right
-		line-height 36px
-		text-align center
-		background #ccc
-		// background rgba(0,0,0,.2)
-		border-radius 5px
-	div:hover
-		box-shadow 0 0 2px 2px rgba(0,0,0,.5)
-
 .hide
 	display none
-
-.badge
-	position absolute
-	top -12px
-	color #333
-	padding 3px
-	line-height 1.2em
 
 .activePlayers > p
 	right 10px
@@ -857,7 +865,7 @@ div.currentButton
 	overflow auto
 	h2
 		color $csBlue
-		margin  0 10px 0 20px
+		margin 0 10px 0 20px
 		padding 0
 
 	p 
@@ -1084,3 +1092,38 @@ p.privacyMessage
 
 .labBackground
 	background $cloudUrl('img/game/lab_bg.png') no-repeat center center 
+
+
+.tooltip
+	position absolute
+	z-index $zindexTooltip
+	display block
+	visibility visible
+	padding 5px
+	font-size 11px
+	opacity 0
+	$transition(opacity 0.3s ease)
+	&.in
+		opacity 1
+	&.bottom
+		margin-top 5px
+		.tooltip-arrow
+			top 0
+			left 50%
+			margin-left -5px
+			border-left 5px solid transparent
+			border-right 5px solid transparent
+			border-bottom 5px solid $csIconBlack
+
+.tooltip-inner
+	max-width 200px
+	padding 3px 8px
+	color $white
+	text-align center
+	text-decoration none
+	background-color $csIconBlack
+
+.tooltip-arrow
+	position absolute
+	width 0
+	height 0

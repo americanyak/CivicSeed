@@ -3,8 +3,8 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: >>>>> BASICS
 
 
-::-moz-selection{background:$white;color:$black;text-shadow:none;}
 ::selection{background:$white;color:$black;text-shadow:none;}
+::-webkit-input-placeholder{color:black;}
 a{color:#4559ac;text-decoration:none;}
 a:hover{text-decoration:underline;}
 a:focus{outline:thin dotted;}
@@ -118,6 +118,132 @@ td
 .console hgroup h1 {font-weight:700;}
 .console hgroup h2 {font:28px/36px Lato,Arial,sans-serif;}
 .console header .button {float:right;margin:3px 0 0;width:200px;}
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: >>>>> FORMS/FORM ELEMENTS */
+
+
+form p
+	margin 0 0 .5em
+form ol
+	margin 0
+	list-style none
+form ul
+	margin 0
+	list-style none
+form li
+	margin 0 0 .5em
+	float left
+	width 100%
+form li.right
+	clear right
+	float right
+	width 43.6%
+	margin-right 6.2%
+form li.left
+	clear left
+	float left
+	width 50%
+legend
+form h2
+	border 0
+	margin 0 0 12px
+	padding 0
+	font 20px/34px $headerFontFamily
+	letter-spacing 1.5px
+	text-shadow 0 -1px 3px #ddd
+	text-transform uppercase
+fieldset:first-child
+	background none transparent
+fieldset
+	margin 0
+	padding 13px 35px 15px
+	background url(../img/popup_toc_divider.png) repeat-x 0 0 transparent
+	border 0
+	overflow hidden
+.popup fieldset
+	padding 0
+label
+	float left
+	min-height 34px
+	width 40%
+	margin 0 5%
+	vertical-align middle
+	cursor pointer
+	font 15px/34px $libreFontFamily
+	letter-spacing 1.5px
+	text-shadow 0 -1px 3px #ddd
+	text-transform uppercase
+label.checkbox
+label.radio
+	margin 0
+	width auto
+	min-height 0
+label.checkbox
+label.radio
+form .small
+	font 14px/18px $libreFontFamily
+	letter-spacing 0px
+	text-shadow none
+	text-transform none
+select
+	margin 0
+	padding 0 7px
+	height 25px
+	border 0 none
+	color #222
+	vertical-align middle
+	$transition(all 0.2s linear 0s)
+	&:focus
+		$boxShadow(0 0 12px white)
+		outline 0 none
+input
+	@extends select
+	font-style italic
+input[type="text"]
+input[type="password"]
+input[type="email"]
+input[type="search"]
+	width 206px
+textarea
+	@extends select
+	vertical-align top
+	min-height 125px
+	resize vertical
+	overflow auto
+button
+input[type="button"]
+input[type="reset"]
+input[type="submit"]
+input[type="image"]
+	@extends select
+	padding 0 8px
+	background-color #4d5e7d
+	color white
+	text-align center
+	cursor pointer
+	&:focus
+	&:hover
+		background-color black
+		$boxShadow(0 0 0 transparent)
+button[disabled]
+input[type="button"][disabled]
+input[type="reset"][disabled]
+input[type="submit"][disabled]
+input[type="image"][disabled]
+	cursor default
+	background-color #9a9a9a
+.radio label
+.checkbox label
+	display inline-block
+	line-height 24px
+	vertical-align middle
+input[type="checkbox"],input[type="radio"]{margin:2px 4px 4px;vertical-align:middle;$boxSizing(border-box)}
+input[type="search"]{-webkit-appearance:textfield;$boxSizing(content-box)}
+input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;} /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+// button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+input:invalid,textarea:invalid{$boxShadow(0 0 5px #f00)}
+.no-boxshadow input:invalid,.no-boxshadow textarea:invalid{background-color:#f0dddd;} /* I don't get this...keep??? */
 
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: >>>>> HELPER CLASSES AND ADDITIONAL TYPICAL STYLES

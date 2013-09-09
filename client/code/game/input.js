@@ -321,7 +321,7 @@ var $input = module.exports = {
 		});
 
 		//tooltip for HUD controls
-		$BODY.on('mouseenter', '.globalHud > div > i, .playerHud > div > i, .seedventory > div > i', function () {
+		$BODY.on('mouseenter', '.hudIcon, .seedventory > div > i', function () {
 			var info = $(this).attr('title');
 			$(this).tooltip('show');
 		});
