@@ -89,11 +89,11 @@ var $input = module.exports = {
 			});
 		});
 
-		//change cursor on mouse move
+		// change cursor on mouse move
 		$BODY.on('mousemove', '#gameContainer', function(e) {
-			if( !$game.inTransit && !$game.$player.isMoving && !$game.$resources.isShowing && $game.running){
+			if(!$game.inTransit && !$game.$player.isMoving && !$game.$resources.isShowing && $game.running) {
 				var mInfo = {
-					x: e.pageX,
+					x: e.pageX - 20,
 					y: e.pageY,
 					offX: this.offsetLeft,
 					offY: this.offsetTop,
@@ -103,22 +103,22 @@ var $input = module.exports = {
 			}
 		});
 
-		//decide what to do based on generic mouse click
+		// decide what to do based on generic mouse click
 		$BODY.on('click', '#gameContainer', function (e) {
 			var goAhead = startNewAction();
 			if(goAhead) {
 					var mInfo = {
-					x: e.pageX,
+					x: e.pageX - 20,
 					y: e.pageY,
 					offX: this.offsetLeft,
 					offY: this.offsetTop,
 					debug: true
 				};
-				$game.$mouse.updateMouse(mInfo,true);
+				$game.$mouse.updateMouse(mInfo, true);
 			}
 		});
 
-		//send a chat message, pulled from chat field
+		// send a chat message, pulled from chat field
 		$BODY.on('click', '#chatButton', function (e) {
 			e.preventDefault();
 			var sentence = $chatText.val(),
