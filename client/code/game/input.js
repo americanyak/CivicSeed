@@ -90,7 +90,7 @@ var $input = module.exports = {
 		});
 
 		//change cursor on mouse move
-		$BODY.on('mousemove', '.gameboard', function(e) {
+		$BODY.on('mousemove', '#gameContainer', function(e) {
 			if( !$game.inTransit && !$game.$player.isMoving && !$game.$resources.isShowing && $game.running){
 				var mInfo = {
 					x: e.pageX,
@@ -104,7 +104,7 @@ var $input = module.exports = {
 		});
 
 		//decide what to do based on generic mouse click
-		$BODY.on('click', '.gameboard', function (e) {
+		$BODY.on('click', '#gameContainer', function (e) {
 			var goAhead = startNewAction();
 			if(goAhead) {
 					var mInfo = {
