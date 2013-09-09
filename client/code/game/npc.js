@@ -56,7 +56,7 @@ $game.$npc = {
 	//get render info for all npcs to draw them
 	getRenderInfo: function() {
 		var all = [];
-		if($game.bossModeUnlocked && $game.$player.currentLevel > 3) {
+		if((!$game.bossModeUnlocked && $game.$player.currentLevel > 3) || $game.$player.currentLevel < 3) {
 			$.each(_allNpcs, function(key, npc) {
 				var temp = npc.getRenderInfo();
 				if(temp) {
@@ -276,7 +276,7 @@ $game.$npc = {
 	//show dialog from npc in chat bubble
 	showSmalltalk: function(firstTime) {
 		//they have a resource with just one random response
-		if(firstTime) {
+		if(firstTime || $game.$player.botanistState === 0) {
 			_speak = 'You should really see the botanist before exploring the world.';
 		} else {
 			if(_curNpc.isHolding) {

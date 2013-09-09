@@ -25,14 +25,19 @@ body.page-game
 	$noUserSelect()
 	ul, ol
 		font-size 16px
-	.cutScene
+	.cutSceneBg
+		background black;
+		width 960px
+		height 480px
 		display none
 		position absolute
 		z-index 9999
 		top 0 
 		left 0
-		width 960px
-		height 480px
+		.cutScene
+			position absolute
+			width 960px
+			height 480px
 
 .hud
 	margin 20px 0 0
@@ -125,6 +130,9 @@ body.page-game
 		margin 20px
 	 .dialog
 		width 870px
+
+	.seedChips
+		text-align center
 
 .newDislpay
 	background $csLightOrange
@@ -288,6 +296,10 @@ body.page-game
 		.colorMapEveryone img
 			position absolute
 			width 284px
+		.displayPercent
+			position absolute
+			top 200px
+			left 10px
 	.topSeeders
 		position absolute
 		top 85px
